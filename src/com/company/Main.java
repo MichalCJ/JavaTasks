@@ -17,8 +17,8 @@ public class Main {
         //   mcj.pet.feed();
         //   mcj.pet.takeForAWalk();
 
-        mcj.car = new Car("Renault", "Megane", 70000.00, "celadon", 1269);
-        System.out.println(mcj.car.producer + " " + mcj.car.model);
+        mcj.setCar(new Car("Renault", "Megane", 70000.00, "celadon", 1269));
+        System.out.println(mcj.getCar().producer + " " + mcj.getCar().model);
 
         System.out.println("My money is :" + mcj.getSalary());
 
