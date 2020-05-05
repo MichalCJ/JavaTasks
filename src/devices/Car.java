@@ -1,4 +1,4 @@
-package com.company;
+package devices;
 
 public class Car {
     public final String model;
@@ -15,4 +15,9 @@ public class Car {
         this.colour = colour;
         this.carMileage = carMileage;
     }
+
+    public String toString() {
+        return model + " " + producer + " " + firstPrice + " " + colour + " " + carMileage;
+    }
+
 }

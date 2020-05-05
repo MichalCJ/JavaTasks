@@ -1,5 +1,8 @@
 package com.company;
 
+import devices.Car;
+import devices.Phone;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -55,4 +58,15 @@ public class Human {
             System.out.println("Dude you are too poor to buy a car. Go work on yourself to be able to buy that car");
         }
     }
+
+    public Human(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+    }
+
+    public String toString() {
+        return firstName + " " + lastName;
+    }
+
 }

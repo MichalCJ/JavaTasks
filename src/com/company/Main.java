@@ -1,19 +1,17 @@
 package com.company;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
+import devices.Car;
+import devices.Phone;
 
 public class Main {
 
     public static void main(String[] args) {
-        Animal dog = new Animal("dog");
+        Animal dog = new Animal("dog", 6.0, "Pug");
         dog.name = "Pug";
 
-        Human mcj = new Human();
-        mcj.firstName = "Michał";
-        mcj.lastName = "Cięszczyk-Jaworski";
+        Human mcj = new Human("Michał", "Cięszczyk-Jaworski");
 
-        //   mcj.pet = dog;
+        mcj.pet = dog;
         //   mcj.pet.feed();
         //   mcj.pet.takeForAWalk();
 
@@ -23,6 +21,14 @@ public class Main {
         System.out.println("My money is :" + mcj.getSalary());
 
         mcj.setSalary(1500.0);
+
+        Phone mobile = new Phone("Xiaomi", "S1", 6.0, "android");
+        mcj.phone = mobile;
+        System.out.println(mobile);
+        System.out.println(mcj);
+        //System.out.println(Car);
+
+        System.out.println(dog);
 
     }
 }
