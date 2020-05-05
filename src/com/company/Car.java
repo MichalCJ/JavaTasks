@@ -6,7 +6,7 @@ public class Car {
     public final Double firstPrice;
     public final String colour;
     public final Integer carMileage;
-    public Double value = 60000.0;
+    public Double value = 1000.0;
 
     public Car(String producer, String model, Double firstPrice, String colour, Integer carMileage) {
         this.model = model;

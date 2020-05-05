@@ -9,18 +9,20 @@ public class Main {
         Animal dog = new Animal("dog");
         dog.name = "Pug";
 
-        Human me = new Human();
-        me.firstName = "Michał";
-        me.lastName = "Cięszczyk-Jaworski";
+        Human mcj = new Human();
+        mcj.firstName = "Michał";
+        mcj.lastName = "Cięszczyk-Jaworski";
 
-     //   me.pet = dog;
-     //   me.pet.feed();
-     //   me.pet.takeForAWalk();
+        //   mcj.pet = dog;
+        //   mcj.pet.feed();
+        //   mcj.pet.takeForAWalk();
 
-        me.car = new Car ("Renault", "Megane", 70000.00, "celadon", 1269);
-        System.out.println(me.car.producer + " " + me.car.model );
+        mcj.car = new Car("Renault", "Megane", 70000.00, "celadon", 1269);
+        System.out.println(mcj.car.producer + " " + mcj.car.model);
 
+        System.out.println("My money is :" + mcj.getSalary());
 
+        mcj.setSalary(1500.0);
 
     }
 }
