@@ -1,5 +1,8 @@
 package com.company;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,24 +13,13 @@ public class Main {
         me.firstName = "Michał";
         me.lastName = "Cięszczyk-Jaworski";
 
-        me.pet = dog;
-        me.pet.feed();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
+     //   me.pet = dog;
+     //   me.pet.feed();
+     //   me.pet.takeForAWalk();
 
-        me.pet.feed();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.feed();
-        me.pet.feed();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
-        me.pet.feed();
-        me.pet.takeForAWalk();
-        me.pet.takeForAWalk();
+        me.car = new Car ("Renault", "Megane", 70000.00, "celadon", 1269);
+        System.out.println(me.car.producer + " " + me.car.model );
+
 
 
     }
