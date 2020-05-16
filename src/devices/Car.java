@@ -1,23 +1,23 @@
 package devices;
 
-public class Car {
-    public final String model;
-    public final String producer;
-    public final Double firstPrice;
-    public final String colour;
-    public final Integer carMileage;
-    public Double value = 1000.0;
+public class Car extends Device {
 
-    public Car(String producer, String model, Double firstPrice, String colour, Integer carMileage) {
-        this.model = model;
-        this.producer = producer;
+    public final Double firstPrice;
+    public final Integer carMileage;
+
+    public Car(String producer, String model, Double firstPrice, String colour, Integer carMileage, Integer yearOfProduction) {
+        super(producer, model, yearOfProduction, colour);
         this.firstPrice = firstPrice;
-        this.colour = colour;
         this.carMileage = carMileage;
     }
 
+
     public String toString() {
-        return model + " " + producer + " " + firstPrice + " " + colour + " " + carMileage;
+        return super.toString() + " " + firstPrice + " " + carMileage;
     }
 
+    @Override
+    public void turnOn() {
+        System.out.println("Car is ready for a ride");
+    }
 }
