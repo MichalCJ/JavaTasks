@@ -14,6 +14,8 @@ public class Main {
         mcj.pet = dog;
         //   mcj.pet.feed();
         //   mcj.pet.takeForAWalk();
+        Car van = new Car("Skoda", "Octavia", 20000.00, "green", 666, 2018);
+
 
         mcj.setCar(new Car("Renault", "Megane", 70000.00, "celadon", 1269, 2012));
         System.out.println(mcj.getCar().producer + " " + mcj.getCar().model + " " + mcj.getCar().colour + " " + mcj.getCar().yearOfProduction);
@@ -27,6 +29,8 @@ public class Main {
         System.out.println(mobile);
         System.out.println(mcj);
         //System.out.println(Car);
+        mobile.turnOn();
+        van.turnOn();
 
         System.out.println(dog);
 
