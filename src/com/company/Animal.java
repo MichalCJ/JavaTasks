@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.File;
 
-public class Animal {
+public class Animal implements Saleable {
     public final String species;
     public String name;
     File pic;
@@ -15,15 +15,9 @@ public class Animal {
     public Animal(String species) {
         this.species = species;
         switch (species) {
-            case "dog":
-                this.weight = DEFAULT_DOG_WEIGHT;
-                break;
-            case "bear":
-                this.weight = DEFAULT_BEAR_WEIGHT;
-                break;
-            case "snake":
-                this.weight = DEFAULT_SNAKE_WEIGHT;
-                break;
+            case "dog" -> this.weight = DEFAULT_DOG_WEIGHT;
+            case "bear" -> this.weight = DEFAULT_BEAR_WEIGHT;
+            case "snake" -> this.weight = DEFAULT_SNAKE_WEIGHT;
         }
     }
 
@@ -65,6 +59,28 @@ public class Animal {
 
     public String toString() {
         return species + " " + weight + " " + name;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+
+        if (buyer.getCash() >= price) {
+            if (seller.pet == this) {
+                seller.pet = null;
+                buyer.pet = this;
+                seller.setCash(seller.getCash() + price);
+                buyer.setCash(buyer.getCash() - price);
+                System.out.println("The sale is over, this animal is" + this + "sold to" + buyer.firstName);
+            } else {
+                throw new Exception("He is not yours");
+            }
+        } else {
+            throw new Exception("Go earn more money, because now you don't have enough ");
+        }
+        if (this instanceof Human) {
+            throw new Exception("Dude, We live in XXI centuries you can't sell humans ");
+        }
+
     }
 
 }

@@ -6,12 +6,17 @@ import devices.Phone;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Human {
-    String firstName;
-    String lastName;
-    Animal pet;
-    Phone phone;
+public class Human extends Animal {
+    public String firstName;
+    public String lastName;
+    public Animal pet;
+    public Phone phone;
     private Car car;
+    private Double cash = 100.0;
+
+    public Human() {
+        super("homo sapiens");
+    }
 
     private final Double salaryIncrease = 150.0;
     private Double salary = 1500.0;
@@ -33,7 +38,7 @@ public class Human {
             System.out.println("New data about your salary has been sent to the accounting system");
             System.out.println("You must collect the annex from the contract. To do this, go to Mrs. Hania from the cadres");
             System.out.println("You fool you can't hide from ZUS and US. They already know about the change in your pay and you have nothing to hide");
-            Double increase = salary + salaryIncrease;
+            double increase = salary + salaryIncrease;
             System.out.println("Nice someone increased your salary about :" + salaryIncrease + " Now you will earn :" + increase);
 
 
@@ -41,29 +46,31 @@ public class Human {
         return salary;
     }
 
+    public Double getCash() {
+        return cash;
+    }
+
+    public void setCash(Double cash) throws Exception {
+        if (cash >= 0.0) {
+            this.cash = cash;
+        } else {
+            throw new Exception("You are broke");
+        }
+
+    }
+
     public Car getCar() {
         return car;
     }
 
     public void setCar(Car car) {
-        if (this.salary >= car.value) {
-            System.out.println("Nice, you are enough rich to buy a car");
-            this.car = car;
 
-        } else if (this.salary * 12 >= car.value) {
-            System.out.println("Well this isn't your biggest success but you bought car on credit");
-            this.car = car;
+        this.car = car;
 
-        } else {
-            System.out.println("Dude you are too poor to buy a car. Go work on yourself to be able to buy that car");
-        }
-    }
-
-    public Human(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
 
     }
+
+
 
     public String toString() {
         return firstName + " " + lastName;
